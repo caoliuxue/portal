@@ -1,0 +1,120 @@
+<!--头部标题栏-->
+<!--<div class="head_bar fl">-->
+<!--<div class="fl log_box" style="background: #2A354D;">-->
+<!--<div class="log">-->
+<!--<a href="/"><img src="img/header_logo_cn.png" style="margin-top: 14px; width: 80%;" /></a>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="fl tite_text_box">-->
+<!--<div class="tite_text clear">-->
+<!--&lt;!&ndash;左侧&ndash;&gt;-->
+<!--<div class="exponent fl">-->
+<!--<span>{{'le_com'|i18n}}&nbsp;</span><span>{{'close_price'|i18n}}:&nbsp;</span><span class="fnt_20">{{closingP}}</span><span-->
+<!--class="fnt_12">{{'yuan'|i18n}}&nbsp;</span><span>{{'volume'|i18n}}:&nbsp;</span><span-->
+<!--class="fnt_20">{{volumn}}</span><span>{{'million'|i18n}}</span>-->
+<!--</div>-->
+<!--&lt;!&ndash;中部&ndash;&gt;-->
+<!--<div class="fme fl clear mag_l_56">-->
+<!--&lt;!&ndash;<span class="fl pad_t_2"><%=session.getAttribute("userName")%></span>&ndash;&gt;-->
+<!--<span class="fl pad_t_2">汪瑶</span>-->
+<!--<img class="pg_portrait fl" src="img/CRM Copy.png" />-->
+<!--<span class="fl" style="border-bottom: 1px solid #8790A1; height: 41px; margin-left: 10px; margin-top: 2px; cursor: pointer;" onclick="window.location.href='logout'">{{'logout'|i18n}}</span>-->
+<!--</div>-->
+<!--&lt;!&ndash;右侧&ndash;&gt;-->
+<!--<div class="fl date clear">-->
+<!--<span class="fl pad_t_2" id="todayDate1"></span> <span class="fl"-->
+<!--style="border-bottom: 1px solid #8790A1; height: 41px; margin-left: 24px; margin-top: 2px; cursor: pointer;">{{'contact_us'|i18n}}-->
+<!--</span> <span class="fl "-->
+<!--style="border-bottom: 1px solid #8790A1; height: 41px; margin-left: 24px; margin-top: 2px; cursor: pointer;"-->
+<!--id="zw_lj" ng-click="switchLang()">{{language}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<div>
+    <div class="navbar navbar-staic-top">
+        <div class="fl log_box" style="background: #2A354D;">
+            <div class="log">
+                <a href="/"><img src="img/header_logo_cn.png" style="width: 80%;"/></a>
+            </div>
+        </div>
+        <div class="navbar-top-container">
+            <ul class="nav navbar-top-links navbar-right navbar-fix">
+                <li>
+                <span class="m-r-sm welcome-message">
+
+                </span>
+                    <span>{{'le_com'|i18n}}&nbsp;</span><span>{{'close_price'|i18n}}:&nbsp;</span><span class="fnt_20">{{closingP}}</span><span
+                        class="fnt_12">{{'yuan'|i18n}}&nbsp;</span><span>{{'volume'|i18n}}:&nbsp;</span><span
+                        class="fnt_20">{{volumn}}</span><span>{{'million'|i18n}}</span>
+                </li>
+                <li>
+                    <!--<span class="fl pad_t_2"><%=session.getAttribute("userName")%></span>-->
+                    <span>汪瑶</span>
+                    <img class="pg_portrait" src="img/CRM Copy.png"/>
+                    <span class="navLink" onclick="window.location.href='logout'">{{'logout'|i18n}}</span>
+                </li>
+                <!--<li class="dropdown">-->
+                <!--<a class="dropdown-toggle count-info" data-toggle="dropdown" href="index.html#">-->
+                <!--<i class="fa fa-bell"></i> <span class="label label-primary">8</span>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu dropdown-alerts">-->
+                <!--<li>-->
+                <!--<a href="mailbox.html">-->
+                <!--<div>-->
+                <!--<i class="fa fa-envelope fa-fw"></i> You have 16 messages-->
+                <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
+                <!--</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                <!--<a href="profile.html">-->
+                <!--<div>-->
+                <!--<i class="fa fa-twitter fa-fw"></i> 3 New Followers-->
+                <!--<span class="pull-right text-muted small">12 minutes ago</span>-->
+                <!--</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                <!--<a href="grid_options.html">-->
+                <!--<div>-->
+                <!--<i class="fa fa-upload fa-fw"></i> Server Rebooted-->
+                <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
+                <!--</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li>-->
+                <!--<div class="text-center link-block">-->
+                <!--<a href="notifications.html">-->
+                <!--<strong>See All Alerts</strong>-->
+                <!--<i class="fa fa-angle-right"></i>-->
+                <!--</a>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</li>-->
+
+
+                <li>
+                <span>
+                    2016/10/16 星期日
+                </span>
+                </li>
+                <li>
+                    <span class="navLink">{{'contact_us'|i18n}}</span>
+                </li>
+                <li>
+                    <!--<a class="right-sidebar-toggle">-->
+                    <!--{{language}}-->
+                    <!--</a>-->
+                    <span class="navLink" ng-click="switchLang()">{{language}}</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

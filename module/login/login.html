@@ -1,0 +1,36 @@
+<div class="gray-bg" style="width: 100%;height: 100%;position: absolute;">
+
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+
+            <div class="col-md-6">
+                <h2 class="font-bold">{{'china'|i18n}}</h2>
+
+                <p>
+                    {{'china'|i18n}}乐视人首页登录
+                </p>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <form class="m-t" role="form">
+                        <div class="form-group">
+                            <input type="text" id="username" ng-model="username" class="form-control" placeholder="Username" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" ng-model="password" class="form-control" placeholder="Password" required="">
+                        </div>
+                        <button ng-click="goValidate()" class="btn btn-primary block full-width m-b">Login</button>
+
+                        <a>
+                            <small>忘记密码?联系汪瑶吧</small>
+                        </a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+	<!-- 使用注解的方式配置Bean -->
+	<context:annotation-config />
+	
+	<!-- 实例化Bean时自动扫描的包  -->
+	<context:component-scan base-package="com.letv.workbench" /> 
+        
+    <!-- 加载属性文件 -->                     
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+	    <!-- 初始化连接:连接池启动时创建的初始化连接数量。Default:0 -->
+        <property name="initialSize" value="${dbcp.initialSize}" />
+        <!-- 最大活动连接:连接池在同一时间能够分配的最大活动连接的数量,如果设置为非正数则表示不限制。Default:8 -->
+        <property name="maxTotal" value="${dbcp.maxTotal}" />
+        <!-- 最小空闲连接:连接池中容许保持空闲状态的最小连接数量,低于这个数量将创建新的连接,如果设置为0则不创建。Default:0 -->
+        <property name="minIdle" value="${dbcp.minIdle}" />
+        <!-- 最大空闲连接:连接池中容许保持空闲状态的最大连接数量,超过的空闲连接将被释放,如果设置为负数表示不限制。Default:8 -->
+        <property name="maxIdle" value="${dbcp.maxIdle}" />
+        <!-- 最大等待时间:当没有可用连接时,连接池等待连接被归还的最大时间(以毫秒计数),超过时间则抛出异常,如果设置为-1表示无限等待。Default:-1 -->
+	    <property name="maxWaitMillis" value="${dbcp.maxWait}" />
+	    <!-- 在将连接返回给调用者之前,验证从连接池取出的连接。如果指定,则查询必须是一个SQL SELECT并且必须返回至少一行记录 -->
+	    <property name="validationQuery" value="${dbcp.validationQuery}"/> 
+	    <!-- 指明是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个。 设置为true后如果要生效,validationQuery参数必须设置为非空字符串。Default:true -->    
+   		<property name="testOnBorrow" value="${dbcp.testOnBorrow}"/>  
+	</bean>
+    
+	<!-- JDBC事务管理器  -->
+	<bean id="jdbcTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+    <!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="jdbcTransactionManager" />
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<property name="dataSource" ref="dataSource" />
+	</bean>
+	       
+</beans>
